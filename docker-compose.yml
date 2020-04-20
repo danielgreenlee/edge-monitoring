@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.3'
 
 volumes:
     portainer_data: {}
@@ -6,7 +6,7 @@ volumes:
 services:
 
   cadvisor:
-    image: google/cadvisor
+    image: budry/cadvisor-arm
     volumes:
       - /:/rootfs:ro
       - /var/run:/var/run:rw
