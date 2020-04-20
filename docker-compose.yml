@@ -15,8 +15,6 @@ services:
     ports:
       - 8080:8080
     restart: always
-    deploy:
-      mode: global
 
   agent:
     image: portainer/agent
@@ -28,10 +26,3 @@ services:
         published: 9001
         protocol: tcp
         mode: host
-    networks:
-      - portainer_agent
-    deploy:
-      mode: global
-      placement:
-        constraints: [node.platform.os == linux]
-    restart: always
