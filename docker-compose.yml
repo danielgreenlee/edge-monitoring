@@ -26,7 +26,7 @@ services:
         published: 9001
         protocol: tcp
         mode: host
-        
+
 nodeexporter:
     image: prom/node-exporter:v0.18.1
     container_name: nodeexporter
@@ -42,7 +42,3 @@ nodeexporter:
     restart: unless-stopped
     expose:
       - 9100
-    networks:
-      - monitor-net
-    labels:
-      org.label-schema.group: "monitoring"
