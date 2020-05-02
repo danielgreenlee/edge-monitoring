@@ -27,7 +27,7 @@ services:
         protocol: tcp
         mode: host
 
-nodeexporter:
+  nodeexporter:
     image: prom/node-exporter:v0.18.1
     container_name: nodeexporter
     volumes:
