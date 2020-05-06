@@ -28,7 +28,7 @@ services:
         mode: host
 
   nodeexporter:
-    image: prom/node-exporter:v0.18.1
+    image: prom/node-exporter:latest
     container_name: nodeexporter
     volumes:
       - /proc:/host/proc:ro
@@ -40,5 +40,5 @@ services:
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
     restart: unless-stopped
-    expose:
-      - 9100
+    ports:
+      - 9100:9100
