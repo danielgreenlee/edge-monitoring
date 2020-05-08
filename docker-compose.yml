@@ -26,6 +26,7 @@ services:
         published: 9001
         protocol: tcp
         mode: host
+    restart: always
 
   nodeexporter:
     image: prom/node-exporter:latest
@@ -39,6 +40,6 @@ services:
       - '--path.rootfs=/rootfs'
       - '--path.sysfs=/host/sys'
       - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
-    restart: unless-stopped
+    restart: always
     ports:
       - 9100:9100
